@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo ao <%= companyName %></title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d1117; /* Fundo escuro */
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: #161b22; /* Fundo mais claro para o corpo do email */
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid #30363d;
+        }
+        .header {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6); /* Gradiente Nexus */
+            padding: 25px 30px;
+            color: #ffffff;
+            text-align: center;
+            border-bottom: 1px solid #4a0d99;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .header p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 30px;
+            color: #c9d1d9; /* Cor de texto claro */
+            line-height: 1.6;
+        }
+        .content h2 {
+            color: #6366f1; /* Cor primária Nexus */
+            font-size: 24px;
+            margin-top: 0;
+        }
+        .content strong {
+            color: #8b5cf6; /* Cor de destaque */
+        }
+        .button {
+            display: inline-block;
+            background-color: #6366f1;
+            color: #ffffff;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        .footer {
+            background-color: #161b22;
+            padding: 20px 30px;
+            color: #8b949e; /* Cor de texto mais suave */
+            font-size: 12px;
+            text-align: center;
+            border-top: 1px solid #30363d;
+        }
+        a {
+            color: #6366f1;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Bem-vindo ao <%= companyName %>!</h1>
+            <p>Seu sucesso é a nossa prioridade.</p>
+        </div>
+        <div class="content">
+            <h2>Olá, <%= clientName %>!</h2>
+            <p>É com grande satisfação que confirmamos a conclusão do negócio: <strong><%= dealTitle %></strong>.</p>
+            <p>Você acaba de se tornar um valioso parceiro da nossa equipe. Estamos empolgados com essa nova jornada e com as oportunidades que ela trará.</p>
+            <p>Nossa equipe entrará em contato em breve para os próximos passos, alinhamento e para garantir que você tenha a melhor experiência possível com os nossos serviços.</p>
+            <a href="<%= crmDashboardUrl %>" class="button">Acessar seu Dashboard</a>
+            <p style="margin-top: 30px;">Atenciosamente,</p>
+            <p><strong>Equipe <%= companyName %></strong></p>
+        </div>
+        <div class="footer">
+            <p>&copy; <%= currentYear %> <%= companyName %>. Todos os direitos reservados.</p>
+            <p>Caso tenha alguma dúvida, entre em contato com o nosso <a href="mailto:suporte@<%= companyName.toLowerCase().replace(/ /g, '') %>.com">suporte</a>.</p>
+        </div>
+    </div>
+</body>
+</html>

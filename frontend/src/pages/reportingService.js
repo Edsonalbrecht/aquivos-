@@ -1,0 +1,1 @@
+// Conteúdo do arquivo c:\Users\x\Documents\CandeiasNexusCRM\frontend\src\pages\reportingService.js deve ser movido para cá.

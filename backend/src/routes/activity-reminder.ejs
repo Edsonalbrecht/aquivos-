@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lembrete de Atividade - <%= companyName %></title>
+    <style>
+        body { font-family: sans-serif; background-color: #0d1117; margin: 0; padding: 0; color: #c9d1d9; }
+        .container { max-width: 600px; margin: 20px auto; background-color: #161b22; border-radius: 12px; overflow: hidden; border: 1px solid #30363d; }
+        .header { background: #f59e0b; padding: 20px; color: #000; text-align: center; }
+        .content { padding: 30px; line-height: 1.6; }
+        .activity-box { background: #0d1117; border-left: 4px solid #f59e0b; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .footer { padding: 20px; font-size: 12px; text-align: center; color: #8b949e; border-top: 1px solid #30363d; }
+        .btn { display: inline-block; background: #6366f1; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2 style="margin:0">⏰ Lembrete de Atividade</h2>
+        </div>
+        <div class="content">
+            <p>Olá, <strong><%= userName %></strong>!</p>
+            <p>Você possui uma atividade agendada para daqui a pouco no <strong><%= companyName %></strong>.</p>
+            
+            <div class="activity-box">
+                <p style="margin:0; font-size: 18px; font-weight: bold; color: #f1f5f9;"><%= activityTitle %></p>
+                <p style="margin:5px 0 0; color: #f59e0b;">Vence às: <%= dueDate %></p>
+            </div>
+
+            <p>Prepare-se para o atendimento e boa sorte!</p>
+            
+            <a href="<%= crmDashboardUrl %>" class="btn">Acessar Pipeline</a>
+        </div>
+        <div class="footer">
+            <p>&copy; <%= currentYear %> <%= companyName %> · Automação NexusAI</p>
+        </div>
+    </div>
+</body>
+</html>

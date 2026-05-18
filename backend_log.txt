@@ -1,0 +1,19 @@
+=== 🌱 CANDEIAS NEXUS CRM - INICIANDO SEED ===
+
+ℹ️  Usuário administrador já configurado.
+
+🌱 SEED FINALIZADO COM SUCESSO!
+[Server] Iniciando em modo HTTP
+CandeiasNexusCRM API with WebSockets running on port 3001
+[Reminder] Verificando atividades próximas...
+[Reminder] Erro ao processar lembretes: no such column: a.reminder_sent
+[Socket.io] Novo cliente conectado: WmUAGRS6bdgbePy9AAAC
+[Socket.io] Cliente desconectado (WmUAGRS6bdgbePy9AAAC): client namespace disconnect
+[Socket.io] Novo cliente conectado: u9qNnxE-zfozJgBGAAAF
+[Socket.io] Cliente desconectado (u9qNnxE-zfozJgBGAAAF): client namespace disconnect
+[Socket.io] Novo cliente conectado: 9zQAXWeaVVLWKYtEAAAI
+[Socket.io] Cliente desconectado (9zQAXWeaVVLWKYtEAAAI): client namespace disconnect
+[Socket.io] Novo cliente conectado: rQIScriWaPpsoFABAAAL
+[Socket.io] Cliente desconectado (rQIScriWaPpsoFABAAAL): client namespace disconnect
+[Reminder] Verificando atividades próximas...
+[Reminder] Erro ao processar lembretes: no such column: a.reminder_sent

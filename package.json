@@ -1,0 +1,26 @@
+{
+  "name": "candeias-nexus-crm",
+  "scripts": {
+    "start": "concurrently \"cd backend && node src/index.js\" \"cd frontend && npm start\""
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.450.0",
+    "@google/generative-ai": "^0.21.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "node-cron": "^3.0.3",
+    "node-sqlite3-wasm": "^0.6.0",
+    "nodemailer": "^6.9.7",
+    "socket.io": "^4.7.2",
+    "uuid": "^9.0.1",
+    "web-push": "^3.6.6"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

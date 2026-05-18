@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #070B14;
+  color: #e2e8f0;
+}
+
+/* ── DARK THEME OVERRIDES ─────────────────────────────────────────── */
+.bg-gray-50  { background: rgba(255,255,255,0.02) !important; }
+.bg-gray-100 { background: rgba(255,255,255,0.05) !important; }
+.bg-gray-200 { background: rgba(255,255,255,0.08) !important; }
+
+.bg-white {
+  background: rgba(255,255,255,0.04) !important;
+}
+
+.border-gray-100 { border-color: rgba(255,255,255,0.06) !important; }
+.border-gray-200 { border-color: rgba(255,255,255,0.10) !important; }
+.border-gray-300 { border-color: rgba(255,255,255,0.14) !important; }
+
+.text-gray-900 { color: #f1f5f9 !important; }
+.text-gray-800 { color: #e2e8f0 !important; }
+.text-gray-700 { color: #cbd5e1 !important; }
+.text-gray-600 { color: #94a3b8 !important; }
+.text-gray-500 { color: #64748b !important; }
+.text-gray-400 { color: #475569 !important; }
+
+.divide-y.divide-gray-50 > * + * { border-color: rgba(255,255,255,0.05) !important; }
+
+/* ── GLASS CARDS ──────────────────────────────────────────────────── */
+.bg-white.rounded-xl,
+.bg-white.rounded-2xl {
+  background: rgba(255,255,255,0.04) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4) !important;
+}
+
+.shadow-sm { box-shadow: 0 2px 16px rgba(0,0,0,0.3) !important; }
+.shadow-xl { box-shadow: 0 8px 40px rgba(0,0,0,0.6) !important; }
+.shadow-2xl { box-shadow: 0 16px 60px rgba(0,0,0,0.7) !important; }
+
+/* ── INPUTS ───────────────────────────────────────────────────────── */
+input, textarea, select {
+  background: rgba(255,255,255,0.06) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+  color: #f1f5f9 !important;
+}
+input::placeholder, textarea::placeholder { color: #475569 !important; }
+input:focus, textarea:focus, select:focus {
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 2px rgba(99,102,241,0.25) !important;
+  outline: none !important;
+}
+select option { background: #0f172a; color: #f1f5f9; }
+
+/* ── TABLE ────────────────────────────────────────────────────────── */
+tr:hover { background: rgba(255,255,255,0.03) !important; }
+th { color: #64748b !important; }
+
+/* ── HOVER STATES ─────────────────────────────────────────────────── */
+.hover\:bg-gray-50:hover { background: rgba(255,255,255,0.04) !important; }
+.hover\:bg-gray-200:hover { background: rgba(255,255,255,0.08) !important; }
+
+/* ── MOBILE RESPONSIVE ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Padding top para o header mobile fixo */
+  .p-8 { padding: 72px 16px 16px !important; }
+  .p-6 { padding: 16px !important; }
+
+  /* Grids viram 1 coluna */
+  .grid-cols-2, .grid-cols-3, .grid-cols-4,
+  .lg\:grid-cols-2, .lg\:grid-cols-3, .xl\:grid-cols-6,
+  .md\:grid-cols-4, .md\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Tabelas ficam com scroll horizontal */
+  table { display: block; overflow-x: auto; white-space: nowrap; }
+
+  /* Modais ficam full-screen */
+  .fixed.inset-0 > div,
+  [style*="max-width: 520px"],
+  [style*="maxWidth: 520"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Pipeline: scroll horizontal */
+  .overflow-x-auto { -webkit-overflow-scrolling: touch; }
+
+  /* Textos menores */
+  h2 { font-size: 1.25rem !important; }
+
+  /* AI Assistant menor */
+  .fixed.bottom-24 { width: calc(100vw - 32px) !important; right: 16px !important; }
+
+  /* Modal full screen no mobile */
+  .modal-box {
+    border-radius: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    max-height: 100vh !important;
+    height: 100vh !important;
+  }
+}
+
+/* ── COMPONENT CLASSES ────────────────────────────────────────────── */
+@layer components {
+  .input {
+    @apply w-full rounded-xl px-3 py-2.5 text-sm transition-all;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #f1f5f9;
+  }
+  .input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99,102,241,0.25);
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 rounded-xl text-sm font-semibold text-white transition-all;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    box-shadow: 0 4px 15px rgba(99,102,241,0.35);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(99,102,241,0.5);
+  }
+  .btn-primary:disabled { opacity: 0.5; transform: none; }
+
+  .btn-secondary {
+    @apply px-4 py-2 rounded-xl text-sm font-medium transition-all;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    color: #cbd5e1;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.10); }
+
+  .glass-card {
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+  }
+
+  .neon-border {
+    border: 1px solid rgba(99,102,241,0.4);
+    box-shadow: 0 0 20px rgba(99,102,241,0.15), inset 0 0 20px rgba(99,102,241,0.03);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #6366f1, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
