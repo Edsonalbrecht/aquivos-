@@ -1,8 +1,11 @@
 const { Database: WasmDB } = require('node-sqlite3-wasm');
 const path = require('path');
+const fs = require('fs');
 require('dotenv').config();
 
 const dbPath = path.resolve(process.env.DB_PATH || './crm.db');
+const dbDir = path.dirname(dbPath);
+if (!fs.existsSync(dbDir)) fs.mkdirSync(dbDir, { recursive: true });
 const wasmDb = new WasmDB(dbPath);
 
 // shim para manter a API identica ao better-sqlite3 nas rotas
