@@ -9,13 +9,15 @@ export default defineConfig({
       '/api': 'http://localhost:3001'
     }
   },
+  optimizeDeps: {
+    include: ['react-simple-maps', 'd3-scale', 'd3-interpolate'],
+  },
   build: {
     rollupOptions: {
       output: {
         manualChunks: {
           'vendor-react': ['react', 'react-dom', 'react-router-dom'],
           'vendor-charts': ['recharts'],
-          'vendor-maps': ['react-simple-maps', 'd3-scale', 'd3-interpolate'],
           'vendor-pdf': ['jspdf', 'html2canvas'],
           'vendor-socket': ['socket.io-client'],
         }
