@@ -23,6 +23,12 @@ const upload = multer({ storage });
 
 router.use(auth);
 
+router.delete('/all', (req, res) => {
+  if (req.user.role !== 'admin') return res.status(403).json({ error: 'Apenas administradores podem fazer isso' });
+  const result = db.prepare('DELETE FROM contacts').run();
+  res.json({ deleted: result.changes });
+});
+
 router.get('/', (req, res) => {
   const { client_id, search } = req.query;
   let query = 'SELECT c.*, cl.name as client_name FROM contacts c LEFT JOIN clients cl ON c.client_id = cl.id WHERE 1=1';
