@@ -65,7 +65,7 @@ export default function Sidebar({ drawerOpen, onClose, onOpen }) {
 
   useEffect(() => {
     api.get('/settings').then(r => {
-      if (r.data.logo_url) setLogoUrl(`http://localhost:3001${r.data.logo_url}`);
+      if (r.data.logo_url) setLogoUrl(r.data.logo_url.startsWith('http') ? r.data.logo_url : `${import.meta.env.VITE_API_URL || ''}${r.data.logo_url}`);
       if (r.data.company_name) setCompanyName(r.data.company_name);
     }).catch(() => {});
   }, []);
@@ -139,10 +139,14 @@ export default function Sidebar({ drawerOpen, onClose, onOpen }) {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         backdropFilter: 'blur(20px)',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '12px 16px',
-        paddingTop: 'calc(12px + env(safe-area-inset-top))',
+        padding: '10px 16px',
+        paddingTop: 'calc(10px + env(safe-area-inset-top))',
+        height: 64,
       }}>
-        <Logo />
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <img src={logoSrc} alt="logo" style={{ width: 36, height: 36, objectFit: 'contain' }} onError={e => { e.target.style.display = 'none'; }} />
+          <span style={{ fontWeight: 700, fontSize: 15, color: '#f1f5f9' }}>{companyName}</span>
+        </div>
         <button onClick={onOpen} style={{
           width: 38, height: 38, borderRadius: 10, border: '1px solid rgba(255,255,255,0.08)',
           background: 'rgba(255,255,255,0.05)', cursor: 'pointer',

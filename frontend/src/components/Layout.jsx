@@ -18,7 +18,10 @@ export default function Layout() {
 
       <style>{`
         @media (max-width: 768px) {
-          main { padding-bottom: 72px !important; }
+          main {
+            padding-bottom: 72px !important;
+            padding-top: 64px !important;
+          }
         }
       `}</style>
     </div>
